@@ -4,16 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
+class Comment extends Model
 {
     //
-    protected $table = 'videos';
-
-    public function comments()
-    {
-      // code...
-      return $this->hasMany('App\Comment');
-    }
+    protected $table = 'comments';
 
     public function user()
     {
