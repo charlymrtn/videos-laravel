@@ -17,7 +17,7 @@
                 <img class="card-img-top" src="{{url('miniatura/'.$video->image)}}" alt="Card image cap">
                 @endif
                 <div class="card-body">
-                  <h4 class="card-title"> <a href="#">{{$video->title}}</a></h4>
+                  <h4 class="card-title"> <a href="{{url('video/'.$video->id)}}">{{$video->title}}</a></h4>
                   <p class="card-text">{{$video->user->name}}</p>
                 </div>
 

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');;
 });
 
 Auth::routes();
@@ -23,4 +23,7 @@ Route::get('/crear-video',['as' => 'crear-video','middleware' => 'auth', 'uses' 
 
 Route::post('/save-video',['as' => 'save-video','middleware' => 'auth', 'uses' => 'VideoController@store']);
 
-Route::get('/miniatura/{filename}',['as' => 'image-video', 'uses' => 'VideoController@getImage']);
+Route::get('/miniatura/{filename}',['as' => 'image-video', 'uses' => 'VideoController@image']);
+Route::get('/file/{filename}',['as' => 'file-video', 'uses' => 'VideoController@video']);
+
+Route::get('/video/{id}',['as' => 'video-detail', 'uses' => 'VideoController@show']);
