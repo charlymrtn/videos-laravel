@@ -170,4 +170,17 @@ class VideoController extends Controller
       return redirect('home')->with(['message' => 'video editado']);
 
     }
+
+    public function search($search = null)
+    {
+      // code...
+      if (is_null($search)) {
+        // code...
+        $search = \Request::get('search');
+        return redirect()->route('search-video',['search' => $search]);
+      }
+      $videos = Video::where('title','LIKE',"%$search%")->paginate(2);
+
+      return view('video.search',compact('videos','search'));
+    }
 }

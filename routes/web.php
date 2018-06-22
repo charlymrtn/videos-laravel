@@ -34,3 +34,5 @@ Route::get('/delete-video/{id}',['as' => 'delete-video','middleware' => 'auth', 
 
 Route::get('/edit-video/{id}',['as' => 'edit-video','middleware' => 'auth', 'uses' => 'VideoController@edit']);
 Route::post('/update-video/{id}',['as' => 'update-video','middleware' => 'auth', 'uses' => 'VideoController@update']);
+
+Route::get('/search/{search?}',['as' => 'search-video','uses' => 'VideoController@search']);

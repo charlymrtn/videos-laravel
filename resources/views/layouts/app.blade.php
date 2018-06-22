@@ -37,11 +37,11 @@
                     <ul class="navbar-nav mr-auto">
                       <li><a href="{{route('home')}}">Home</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" role="search" action="" method="">
+                    <form class="navbar-form navbar-right" role="search" action="{{url('search')}}" method="">
                         <div class="form-group">
                           <input type="text" class="form-control" placeholder="Search..." name="search" value="">
                         </div>
-                        <button type="submit" class="btn btn-default" name="button">
+                        <button type="submit" class="btn btn-default" name="">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </form>
