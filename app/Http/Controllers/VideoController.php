@@ -39,6 +39,7 @@ class VideoController extends Controller
       $video->user_id = $user->id;
       $video->title = $request->input('title');
       $video->description = $request->input('description');
+      $video->status = '1';
 
       //
       $image = $request->file('image');

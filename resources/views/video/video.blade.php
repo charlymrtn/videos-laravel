@@ -18,7 +18,10 @@
           <p class="card-text">{{$video->description}}</p>
         </div>
       </div>
-      @include('video.comments')
+
+          @include('video.comments')
+
+
     </div>
   </div>
 

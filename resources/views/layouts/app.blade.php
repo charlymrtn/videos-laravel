@@ -85,6 +85,11 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="col-md-10 col-md-offset-1">
+          <hr>
+          Curso de laravel 5 de Pajaro 2018
+        </footer>
     </div>
 </body>
 </html>

@@ -27,3 +27,6 @@ Route::get('/miniatura/{filename}',['as' => 'image-video', 'uses' => 'VideoContr
 Route::get('/file/{filename}',['as' => 'file-video', 'uses' => 'VideoController@video']);
 
 Route::get('/video/{id}',['as' => 'video-detail', 'uses' => 'VideoController@show']);
+
+Route::post('/comment',['as' => 'comment','middleware' => 'auth', 'uses' => 'CommentController@store']);
+Route::get('/delete-comment/{id}',['as' => 'delete-comment','middleware' => 'auth', 'uses' => 'CommentController@delete']);
