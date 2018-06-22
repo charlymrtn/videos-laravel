@@ -10,18 +10,27 @@
             </div>
           @endif
 
-          <ul id="videos-list">
+          <div id="videos-list">
             @foreach ($videos as $video)
-              <li class="video-item col-md-4 pull-left">
-
-                <div class="data">
-                  <h4>{{$video->}}</h4>
+              <div class="video-item col-md-10 pull-left card">
+                @if (Storage::disk('images')->has($video->image))
+                <img class="card-img-top" src="{{url('miniatura/'.$video->image)}}" alt="Card image cap">
+                @endif
+                <div class="card-body">
+                  <h4 class="card-title"> <a href="#">{{$video->title}}</a></h4>
+                  <p class="card-text">{{$video->user->name}}</p>
                 </div>
-              </li>
 
+              </div>
+              <a href="#" class="btn btn-success">ver</a>
+              @if (Auth::check() && Auth::user()->id == $video->user->id)
+                <a href="#" class="btn btn-warning">editar</a>
+                <a href="#" class="btn btn-danger">eliminar</a>
+              @endif
             @endforeach
-          </ul>
+          </div>
         </div>
+        {{$videos->links()}}
     </div>
 </div>
 @endsection

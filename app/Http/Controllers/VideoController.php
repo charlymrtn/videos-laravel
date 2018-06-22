@@ -61,4 +61,11 @@ class VideoController extends Controller
       $video->save();
       return redirect()->route('home')->with(['message'=> 'el video se ha subido correctamente']);
     }
+
+    public function getImage($filename)
+    {
+      // code...
+      $file = Storage::disk('images')->get($filename);
+      return Response($file,200);
+    }
 }

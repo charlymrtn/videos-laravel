@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/crear-video',['as' => 'crear-video','middleware' => 'auth', 'uses' => 'VideoController@create']);
 
 Route::post('/save-video',['as' => 'save-video','middleware' => 'auth', 'uses' => 'VideoController@store']);
+
+Route::get('/miniatura/{filename}',['as' => 'image-video', 'uses' => 'VideoController@getImage']);

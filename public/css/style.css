@@ -1,0 +1,13 @@
+body {
+
+}
+
+.card-img-top {
+    height: 150px;
+    width: 200px;
+    overflow: hidden;
+}
+
+.card-title a {
+  color: #444;
+}
