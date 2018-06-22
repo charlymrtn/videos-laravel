@@ -22,10 +22,32 @@
                 </div>
 
               </div>
-              <a href="#" class="btn btn-success">ver</a>
+              <a href="{{url('video/'.$video->id)}}" class="btn btn-success">Ver</a>
               @if (Auth::check() && Auth::user()->id == $video->user->id)
-                <a href="#" class="btn btn-warning">editar</a>
-                <a href="#" class="btn btn-danger">eliminar</a>
+                <a href="{{url('edit-video/'.$video->id)}}" class="btn btn-warning">Editar</a>
+                <!-- Botón en HTML (lanza el modal en Bootstrap) -->
+                <a href="#victorModal{{$video->id}}" role="button" class="btn btn-danger" data-toggle="modal">Eliminar</a>
+
+                <!-- Modal / Ventana / Overlay en HTML -->
+                <div id="victorModal{{$video->id}}" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">¿Estás seguro?</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                            </div>
+                            <div class="modal-body">
+                                <p>¿Seguro que quieres borrar el video {{$video->title}}?</p>
+                                <p class="text-warning"><small>{{$video->user->name}}</small></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <a href="{{route('delete-video',['id'=>$video->id])}}" type="button" class="btn btn-danger">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               @endif
             @endforeach
           </div>

@@ -30,3 +30,7 @@ Route::get('/video/{id}',['as' => 'video-detail', 'uses' => 'VideoController@sho
 
 Route::post('/comment',['as' => 'comment','middleware' => 'auth', 'uses' => 'CommentController@store']);
 Route::get('/delete-comment/{id}',['as' => 'delete-comment','middleware' => 'auth', 'uses' => 'CommentController@delete']);
+Route::get('/delete-video/{id}',['as' => 'delete-video','middleware' => 'auth', 'uses' => 'VideoController@delete']);
+
+Route::get('/edit-video/{id}',['as' => 'edit-video','middleware' => 'auth', 'uses' => 'VideoController@edit']);
+Route::post('/update-video/{id}',['as' => 'update-video','middleware' => 'auth', 'uses' => 'VideoController@update']);
