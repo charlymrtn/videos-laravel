@@ -35,4 +35,11 @@ Route::get('/delete-video/{id}',['as' => 'delete-video','middleware' => 'auth', 
 Route::get('/edit-video/{id}',['as' => 'edit-video','middleware' => 'auth', 'uses' => 'VideoController@edit']);
 Route::post('/update-video/{id}',['as' => 'update-video','middleware' => 'auth', 'uses' => 'VideoController@update']);
 
-Route::get('/search/{search?}',['as' => 'search-video','uses' => 'VideoController@search']);
+Route::get('/search/{search?}/{filter?}',['as' => 'search-video','uses' => 'VideoController@search']);
+
+
+Route::get('clear-cache', function(){
+  $code = Artisan::call('cache:clear');
+});
+
+Route::get('canal/{id}',['as' => 'channel','uses' => 'UserController@channel']);

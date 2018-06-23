@@ -31,4 +31,10 @@ class User extends Authenticatable
     ];
 
     protected $dates = ['deleted_at'];
+
+    public function videos()
+    {
+      // code...
+      return $this->hasMany('App\Video','user_id');
+    }
 }

@@ -8,7 +8,7 @@
       @endif
       <div class="card-body">
         <h4 class="card-title"> <a href="{{url('video/'.$video->id)}}">{{$video->title}}</a></h4>
-        <p class="card-text">{{$video->user->name}}</p>
+        <p class="card-text"> <a href="{{url('canal/'.$video->user->id)}}">{{$video->user->name}}</a> {{ \FormatTime::LongTimeFilter($video->created_at) }}</p>
       </div>
 
     </div>

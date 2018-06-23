@@ -13,7 +13,7 @@
       <div class="card video-data">
         <div class="card-body">
           <div class="card-title">
-              subido por <strong>{{$video->user->name}}</strong> {{ \FormatTime::LongTimeFilter($video->created_at) }}
+              subido por <strong> <a href="{{route('channel',['id'=>$video->user->id])}}">{{$video->user->name}}</a></strong> {{ \FormatTime::LongTimeFilter($video->created_at) }}
           </div>
           <p class="card-text">{{$video->description}}</p>
         </div>

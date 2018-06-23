@@ -13,6 +13,7 @@
               <option value="old">mas antiguo primero</option>
               <option value="alfa">A-Z</option>
             </select>
+            <input type="submit" name="" value="ordenar" class="btn-filter btn bt-sm btn-default">
           </form>
 
           @include('video.videoList')
